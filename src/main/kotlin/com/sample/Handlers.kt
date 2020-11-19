@@ -4,9 +4,8 @@ import kotlinx.coroutines.reactive.awaitSingleOrNull
 import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.*
 import org.springframework.web.reactive.function.server.ServerResponse.ok
-//import org.springframework.web.servlet.function.ServerResponse as ServerResponseServlet
-//import org.springframework.web.reactive.function.server.ServerResponse as ServerResponseReactive
 import org.springframework.web.reactive.function.server.ServerResponse
+import java.security.Principal
 
 
 @Suppress("UNUSED_PARAMETER")
@@ -29,12 +28,10 @@ class UserHandler(
 
 
     suspend fun greet(request: ServerRequest): ServerResponse {
-        var res=request.principal().awaitSingleOrNull()
-        return ok().bodyValueAndAwait(mapOf("greeting" to "Hello, ${
-            if (res === null) "anonymous" else res
-        }"))
+        val res: Principal? = request.principal().awaitSingleOrNull()
+        return ok().bodyValueAndAwait(
+                mapOf("greeting" to "Hello, ${
+                    if (res === null) "anonymous" else res
+                }"))
     }
 }
-
-// fun ano(res: String): String = if (res === "null") "anonymous" else res
-//principal().map { it.name }.map { ServerResponse.ok().body(mapOf("greeting" to "Hello, $it")) }.orElseGet { ServerResponse.badRequest().build() }
