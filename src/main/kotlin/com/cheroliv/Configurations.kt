@@ -1,4 +1,4 @@
-package com.sample
+package com.cheroliv
 
 import org.springframework.core.io.ClassPathResource
 import org.springframework.fu.kofu.configuration

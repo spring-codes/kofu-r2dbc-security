@@ -1,4 +1,4 @@
-package com.sample
+package com.cheroliv
 
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
