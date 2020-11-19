@@ -7,7 +7,7 @@ plugins {
 }
 
 dependencies {
-    val springFuKofuVersion = "0.4.3-SNAPSHOT"
+    val springFuKofuVersion = "0.5.0-SNAPSHOT"
     implementation("org.springframework.fu:spring-fu-kofu:$springFuKofuVersion")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-mustache")
