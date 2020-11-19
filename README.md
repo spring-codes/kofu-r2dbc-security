@@ -1,4 +1,4 @@
-# kofu-coroutines-r2dbc
+# kofu-r2dbc-security
 
 A web application based on: 
 * jvm
