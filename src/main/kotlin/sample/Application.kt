@@ -1,18 +1,21 @@
 package sample
 
-import org.springframework.fu.kofu.reactiveWebApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import org.springframework.fu.kofu.configuration
 
-val app = reactiveWebApplication {
+@SpringBootApplication
+open class SpringSecurityApplication
 
-    configurationProperties<SampleProperties>(prefix = "sample")
-    enable(dataConfig)
-    enable(webConfig)
-    enable(securityConfig)
+fun main(args: Array<String>) {
+    runApplication<SpringSecurityApplication>(*args) {
+        addInitializers({
+            configuration {
+                configurationProperties<SampleProperties>(prefix = "sample")
+            }
+            dataConfig
+            webConfig
+            securityConfig
+        })
+    }
 }
-
-//fun main() = app.run()
-fun main() {
-    app.run()
-}
-
-

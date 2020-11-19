@@ -1,5 +1,6 @@
 package sample
 
+
 import org.springframework.core.io.ClassPathResource
 import org.springframework.fu.kofu.configuration
 import org.springframework.fu.kofu.r2dbc.r2dbc
@@ -8,12 +9,12 @@ import org.springframework.fu.kofu.webflux.webFlux
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.web.servlet.invoke
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.provisioning.InMemoryUserDetailsManager
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 
 val dataConfig = configuration {
     beans {
@@ -46,13 +47,12 @@ val webConfig = configuration {
 }
 
 @EnableWebSecurity
-open class KotlinSecurityConfiguration : WebSecurityConfigurerAdapter() {
-
+open class WebSecurityConfiguration : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         http {
             httpBasic {}
             authorizeRequests {
-                authorize("/greetings/**", hasAuthority("ROLE_ADMIN"))
+                authorize("/greetings/**", hasAuthority("ADMIN"))
                 authorize("/**", permitAll)
             }
         }
@@ -78,7 +78,7 @@ val securityConfig = configuration {
                     user("mvogue", "pw1", "USER"),
                     user("ftetsujin", "pw1", "USER"),
                     user("jlong", "pw", "USER"),
-                    user("rwinch", "pw1", "USER"))
+                    user("rwinch", "pw1", "USER", "ADMIN"))
         }
     }
 }

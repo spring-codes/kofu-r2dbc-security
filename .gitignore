@@ -3,3 +3,5 @@
 build
 gradle/wrapper/gradle-wrapper.jar
 kofu.code-workspace
+local.properties
+
