@@ -1,4 +1,4 @@
-package com.cheroliv
+package sample
 
 import org.springframework.core.io.ClassPathResource
 import org.springframework.fu.kofu.configuration
@@ -44,7 +44,6 @@ val webConfig = configuration {
         }
     }
 }
-
 
 @EnableWebSecurity
 open class KotlinSecurityConfiguration : WebSecurityConfigurerAdapter() {

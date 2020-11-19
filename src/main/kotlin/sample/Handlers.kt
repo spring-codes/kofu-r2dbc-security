@@ -1,4 +1,4 @@
-package com.cheroliv
+package sample
 
 import kotlinx.coroutines.reactive.awaitSingleOrNull
 import org.springframework.http.MediaType

@@ -22,6 +22,8 @@ dependencies {
         exclude("org.junit.vintage", "junit-vintage-engine")
     }
     testImplementation("org.springframework.security:spring-security-test")
+    testImplementation("io.projectreactor:reactor-test")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 repositories {
@@ -30,6 +32,8 @@ repositories {
     maven("https://repo.spring.io/milestone")
     maven("https://repo.spring.io/snapshot")
 }
+
+defaultTasks("bootRun")
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {

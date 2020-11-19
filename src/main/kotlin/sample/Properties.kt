@@ -1,3 +1,3 @@
-package com.cheroliv
+package sample
 
 class SampleProperties(val message: String)

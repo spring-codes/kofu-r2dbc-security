@@ -1,4 +1,4 @@
-package com.cheroliv
+package sample
 
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.AfterAll

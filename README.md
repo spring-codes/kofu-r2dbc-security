@@ -1,16 +1,16 @@
 # kofu-coroutines-r2dbc
 
 A web application based on: 
-* jvm(java virtual machine)
+* jvm
 * gradle
 * kotlin
-* spring
 * kotlin-coroutines
-* H2
-
+* spring-kofu
+* spring-security
+* H2database
 
 **to test the app**<br/>
-open terminal and run `./gradlew bootRun`<br/>
+open terminal and run `./gradlew check`<br/>
 
 **to run the app**<br/>
-`./gradlew check` and launch http://localhost:8080/ 
+`./gradlew` and launch http://localhost:8080/ 
