@@ -7,5 +7,4 @@ fun routes(userHandler: UserHandler) = coRouter {
     GET("/api/user", userHandler::listApi)
     GET("/api/user/{login}", userHandler::userApi)
     GET("/conf", userHandler::conf)
-    GET("/greetings", userHandler::greet)
 }

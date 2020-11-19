@@ -25,12 +25,4 @@ class UserHandler(
 
     suspend fun conf(request: ServerRequest) =
             ok().bodyValueAndAwait(configuration.message)
-
-    suspend fun greet(request: ServerRequest): ServerResponse {
-        val res: Principal? = request.principal().awaitSingleOrNull()
-        return ok().bodyValueAndAwait(
-                mapOf("greeting" to "Hello, ${
-                    if (res === null) "anonymous" else res
-                }"))
-    }
 }
