@@ -1,4 +1,4 @@
-package com.sample
+package com.cheroliv
 
 import kotlinx.coroutines.reactive.awaitSingleOrNull
 import org.springframework.http.MediaType
@@ -25,7 +25,6 @@ class UserHandler(
 
     suspend fun conf(request: ServerRequest) =
             ok().bodyValueAndAwait(configuration.message)
-
 
     suspend fun greet(request: ServerRequest): ServerResponse {
         val res: Principal? = request.principal().awaitSingleOrNull()
